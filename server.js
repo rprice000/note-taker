@@ -17,7 +17,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-    res.json(notesRoutes);
+// Extracts notes from json file to be displayed on notes.html
+    res.json(notesRoutes.slice(1));
 });
 
 
