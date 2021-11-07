@@ -11,7 +11,9 @@ app.use(express.json());
 // links css/javascript files for HTML pages
 app.use(express.static('public'));
 
-
+app.get('/api/notes', (req, res) => {
+    res.json(notesRoutes);
+});
 
 
 
