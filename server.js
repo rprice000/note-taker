@@ -41,12 +41,15 @@ app.get('*', (req, res) => {
 function generateNote(body, noteTakerArray ) {
     const note = body;
     if(noteTakerArray.length === 0)
+        // Starts array at object '1'
         noteTakerArray.push(1);
         body.id = noteTakerArray[0];
         noteTakerArray[0]++;
         noteTakerArray.push(note);
+        // takes notes and writes to json file
         fs.writeFileSync(path.join(__dirname, './db/db.json'),
-            JSON.stringify(noteTakerArray, null, 1)
+        // creates User Notes database for notes to be stored
+            JSON.stringify({ userNotes: noteTakerArray }, null, 2)
     );
 
 
