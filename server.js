@@ -37,10 +37,20 @@ app.get('*', (req, res) => {
 });
 
 function generateNote() {
-    console.log(body);
+    const note = body;
+    if(!Array.isArray(noteTakerArray))
+        noteTakerArray = [];
+    if(noteTakerArray === 0)
+        noteTakerArray.push(0);
+        body.id = noteTakerArray[0];
+        noteTakerArray[0]++;
+        noteTakerArray.push(note);
+        fs.writeFileSync(path.join(__dirname, './db/db.json'),
+            JSON.stringify(noteTakerArray, null, 2)
+    );
 
 
-    
+
     return body;
 }
 
