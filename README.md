@@ -26,7 +26,7 @@ This application allows users to generate notes that are saved on a json.  They 
 
 ## Usage
 
-User only need to access the note taker application from the designated server address.
+User only needs to access the note taker application from the designated server address.
 
 
 ## Screenshots
