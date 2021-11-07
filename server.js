@@ -19,6 +19,7 @@ app.use(express.static('public'));
 
 function generateNote(body, noteTakerArray ) {
     const note = body;
+    // if no array is generated to maye noteTakerArray empty
     if (!Array.isArray(noteTakerArray))
         noteTakerArray = [];   
 
@@ -64,15 +65,14 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+// Route for client to send notes data to the server
 app.post('/api/notes', (req, res) => {
     const note = generateNote(req.body, notesRoutes);
     res.json(note);
 });
 
+
+// Tells server what PORT to listen on for the application
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
-
-// app.listen(3001, () => {
-//     console.log(`API server now on port 3001!`);
-//   });
