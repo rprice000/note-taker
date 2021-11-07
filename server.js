@@ -16,6 +16,11 @@ app.get('/api/notes', (req, res) => {
 });
 
 
+// Route to get index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
 
 
 
