@@ -6,7 +6,7 @@ const path = require('path');
 
 
 
-const notesRoutes = require('.db/db.json');
+const notesRoutes = require('./db/db.json');
 
 // parse incoming strng or array data
 app.use(express.urlencoded({ extended: true}));
