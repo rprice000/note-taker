@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
 // Extracts notes from json file to be displayed on notes.html
-    res.json(notesRoutes.slice(1));
+    res.json(notesRoutes.slice(0));
 });
 
 
@@ -40,17 +40,14 @@ app.get('*', (req, res) => {
 
 function generateNote(body, noteTakerArray ) {
     const note = body;
-    if(!Array.isArray(noteTakerArray))
-        noteTakerArray = [];
     if(noteTakerArray.length === 0)
-        noteTakerArray.push(0);
+        noteTakerArray.push(1);
         body.id = noteTakerArray[0];
         noteTakerArray[0]++;
         noteTakerArray.push(note);
         fs.writeFileSync(path.join(__dirname, './db/db.json'),
-            JSON.stringify(noteTakerArray, null, 2)
+            JSON.stringify(noteTakerArray, null, 1)
     );
-
 
 
     return body;
