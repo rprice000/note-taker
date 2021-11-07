@@ -36,11 +36,11 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-function generateNote() {
+function generateNote(body, noteTakerArray ) {
     const note = body;
     if(!Array.isArray(noteTakerArray))
         noteTakerArray = [];
-    if(noteTakerArray === 0)
+    if(noteTakerArray.length === 0)
         noteTakerArray.push(0);
         body.id = noteTakerArray[0];
         noteTakerArray[0]++;
