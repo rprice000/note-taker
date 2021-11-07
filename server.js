@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-
+const fs = require('fs');
 const path = require('path');
 
 
@@ -39,6 +39,8 @@ app.get('*', (req, res) => {
 function generateNote() {
     console.log(body);
 
+
+    
     return body;
 }
 
