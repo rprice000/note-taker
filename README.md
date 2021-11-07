@@ -54,6 +54,9 @@ https://github.com/rprice000/note-taker
 - Heroku Server Application Link
 https://dashboard.heroku.com/apps/note-taker-rprice000
 
+- Deployed Application on Heroku
+https://note-taker-rprice000.herokuapp.com/
+
 ## Version
 
 - 1.0.0
