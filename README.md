@@ -32,7 +32,7 @@ User only need to access the note taker application from the designated server a
 ## Screenshots
 
 - All screenshots are inside the assets folder within the screenshots folder
--./assets/images/...
+-./public/assets/images/...
 
 ## Technologies
 - HTML5
