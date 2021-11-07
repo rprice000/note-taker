@@ -2,6 +2,10 @@ const express = require('express');
 
 const app = express();
 
+const path = require('path');
+
+
+
 const notesRoutes = require('.db/db.json');
 
 // parse incoming strng or array data
@@ -32,8 +36,16 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+function generateNote() {
+    console.log(body);
 
+    return body;
+}
 
+app.post('/api/notes', (req, res) => {
+    const note = generateNote(req.body, notesRoutes);
+    res.json(note);
+});
 
 
 app.listen(PORT, () => {
